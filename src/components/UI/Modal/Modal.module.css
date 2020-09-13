@@ -1,20 +1,36 @@
 .Modal {
-    position: fixed;
-    z-index: 500;
-    background-color: white;
-    width: 70%;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px black;
-    padding: 16px;
-    left: 15%;
-    top: 30%;
-    box-sizing: border-box;
-    transition: all 0.3s ease-out;
+  position: fixed;
+  z-index: 500;
+  background: white;
+  background: linear-gradient(
+    130deg,
+    rgb(252, 208, 152) 0%,
+    rgb(250, 208, 154) 17%,
+    rgb(245, 140, 111) 24%,
+    rgb(119, 245, 112) 33%,
+    rgb(241, 220, 97) 44%,
+    rgb(240, 134, 68) 54%,
+    rgb(240, 131, 64) 73%,
+    rgb(250, 205, 146) 85%
+  );
+  width: 70%;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px black;
+  padding: 16px;
+  left: 15%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+  color: black;
+  font-weight: bold;
+  font-size: 1.5rem;
 }
 
+
+
 @media (min-width: 600px) {
-    .Modal {
-        width: 500px;
-        left: calc(50% - 250px);
-    }
+  .Modal {
+    width: 500px;
+    left: calc(50% - 250px);
+  }
 }
