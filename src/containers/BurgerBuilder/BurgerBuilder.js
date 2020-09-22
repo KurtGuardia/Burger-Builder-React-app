@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Aux from "../../hoc/Aux";
+import axios from "../../axios-order";
+import Aux from "../../hoc/Aux/Aux";
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/Burger/BuildControls/BuildControls";
 import Modal from "../../components/UI/Modal/Modal";
@@ -81,8 +82,25 @@ class BurgerBuilder extends Component {
   };
 
   purchaseContinueHandler = () => {
-    alert('You continue!')
-  }
+    // alert('You continue!')
+    const order = {
+      ingredients: this.state.ingredients,
+      price: this.state.totalPrice,
+      customer: {
+        name: "Kurt Guardia",
+        address: {
+          street: "Fray Luis de Leion",
+          zipCode: "47002",
+          country: "Spain",
+        },
+        email: "test@test.com",
+      },
+    };
+    axios
+      .post("/orders.json", order)
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
+  };
 
   render() {
     const disabledInfo = {
@@ -103,7 +121,8 @@ class BurgerBuilder extends Component {
             purchaseCancelled={this.purchaseCancelHandler}
             purchasedContinued={this.purchaseContinueHandler}
             ingredients={this.state.ingredients}
-            price={this.state.totalPrice} />
+            price={this.state.totalPrice}
+          />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BuildControls
