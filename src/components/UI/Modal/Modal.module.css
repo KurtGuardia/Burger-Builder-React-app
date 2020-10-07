@@ -21,7 +21,7 @@
   top: 30%;
   box-sizing: border-box;
   transition: all 0.3s ease-out;
-  color: black;
+  color: rgb(77, 77, 77);
   font-weight: bold;
   font-size: 1.5rem;
 }
