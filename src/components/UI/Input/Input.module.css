@@ -2,6 +2,7 @@
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
+  /* height: 100px; */
 }
 
 .Label {
@@ -24,4 +25,14 @@
 .InputElement:focus {
   outline: none;
   background-color: #ccc;
+}
+
+.Invalid {
+  border: 1px solid red;
+  background-color: rgb(241, 143, 132);
+}
+
+.ValidationError {
+  color: red;
+  font-size: 12px;
 }
