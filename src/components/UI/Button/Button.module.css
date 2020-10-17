@@ -1,22 +1,29 @@
 .Button {
-    background-color: transparent;
-    border: none;
-    color: white;
-    outline: none;
-    cursor: pointer;
-    font: inherit;
-    padding: 10px;
-    margin: 10px;
-    font-weight: bold;
-    border-radius: 30px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 10px;
+  margin: 10px;
+  font-weight: bold;
+  border-radius: 30px;
+}
+
+.Button:disabled {
+  color: #5c9210;
+  cursor: not-allowed;
+  background-color: #ccc;
 }
 
 .Success {
-    color: #fff;
-    background-color: #5C9210;
+  color: #fff;
+  background-color: #5c9210;
 }
 
 .Danger {
-    color: #fff;
-    background-color: #944317;
+  color: #fff;
+  background-color: #944317;
 }
+
