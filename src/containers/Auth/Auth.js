@@ -7,7 +7,8 @@ import { connect } from "react-redux";
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onAuth: (email, password) => dispatch(actions.auth(email, password)),
+    onAuth: (email, password, isSignup) =>
+      dispatch(actions.auth(email, password, isSignup)),
   };
 };
 export default connect(
@@ -46,6 +47,7 @@ export default connect(
           touched: false,
         },
       },
+      isSignup: true,
     };
 
     checkValidity(value, rules) {
@@ -88,8 +90,15 @@ export default connect(
 
       this.props.onAuth(
         this.state.controls.email.value,
-        this.state.controls.password.value
+        this.state.controls.password.value,
+        this.state.isSignup
       );
+    };
+
+    switchAuthModeHandler = () => {
+      this.setState((prevState) => {
+        return { isSignup: !prevState.isSignup };
+      });
     };
 
     render() {
@@ -121,6 +130,9 @@ export default connect(
             {form}
             <Button btnType="Success">SUBMIT</Button>
           </form>
+          <Button btnType="Danger" clicked={this.switchAuthModeHandler}>
+            SWITCH TO {this.state.isSignup ? "SIGN IN" : "SIGN UP"}
+          </Button>
         </div>
       );
     }
