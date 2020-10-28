@@ -74,10 +74,10 @@ export const fetchOrders = (token) => {
           });
         }
         dispatch(fetchOrdersSuccess(fetchOrders));
-        console.log(this.state.orders);
       })
       .catch((err) => {
         dispatch(fetchOrdersFail(err));
+        console.log(err);
       });
   };
 };
