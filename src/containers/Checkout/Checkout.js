@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { Redirect, Route } from "react-router-dom";
 import CheckoutSummary from "../../components/Order/CheckoutSummary/CheckoutSummary";
 import ContactData from "./ContactData/ContactData";
-import * as actions from "../../store/actions/index";
 
 const mapStateToProps = (state) => {
   return {
