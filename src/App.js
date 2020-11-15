@@ -3,7 +3,7 @@ import Layout from "./hoc/Layout/Layout";
 import BurgerBuilder from "./containers/BurgerBuilder/BurgerBuilder";
 import { Route, Switch, withRouter, Redirect } from "react-router-dom";
 import Logout from "./containers/Auth/Logout/Logout";
-import { connect } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import * as actions from "./store/actions/index";
 import { useEffect } from "react";
 
